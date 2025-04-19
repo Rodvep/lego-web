@@ -13,13 +13,48 @@ import {
   Youtube,
 } from "lucide-react"
 
+const categoriaPopulares = [
+  {
+    categoria : "Novedad",
+    imgUrl : "/images/image.png"
+  },
+  {
+    categoria : "Exclusivos",
+    imgUrl : "/images/image.png"
+  },
+  {
+    categoria : "Ofertas",
+    imgUrl : "/images/image.png"
+  },
+  {
+    categoria : "Todos los set",
+    imgUrl : "/images/image.png"
+  },
+  {
+    categoria : "Día del niño",
+    imgUrl : "/images/image.png"
+  },
+  {
+    categoria : "Día de la madre",
+    imgUrl : "/images/image.png"
+  },
+  {
+    categoria : "Fórmula 1",
+    imgUrl : "/images/image.png"
+  },
+  {
+    categoria : "Obten recompensas",
+    imgUrl : "/images/image.png"
+  },
+]
+
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       {/* Top Navigation Bar */}
-      <div className="bg-gray-100 py-2 px-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link href="/zona-de-juegos" className="flex items-center text-sm font-medium">
+      <div className="bg-gray-100 py-5 px-4 hidden lg:block">
+        <div className="w-full px-4 flex justify-between items-center">
+          <Link href="/zona-de-juegos" className="flex items-center text-sm font-medium bg-blue-300 py-1 px-2 rounded-sm shadow-slate-400 shadow-sm hover:bg-white">
             <ChevronLeft className="h-4 w-4 mr-1" />
             ZONA DE JUEGOS
           </Link>
@@ -51,7 +86,7 @@ export default function Home() {
 
       {/* Main Navigation */}
       <div className="bg-lego-yellow py-4 px-4">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="w-full px-4 flex justify-between items-center">
           <div className="flex items-center">
             <Link href="/" className="mr-8">
               <Image
@@ -72,7 +107,7 @@ export default function Home() {
               <Link href="/ayuda" className="font-bold text-black">
                 AYUDA
               </Link>
-              <Link href="/rebajas" className="bg-white px-4 py-2 rounded-md font-bold text-lego-red">
+              <Link href="/rebajas" className="bg-white px-4 py-2 rounded-md font-bold text-lego-red ml-8">
                 REBAJAS
               </Link>
             </nav>
@@ -97,7 +132,7 @@ export default function Home() {
       <main>
         {/* Hero Banner */}
         <section className="bg-lego-yellow pb-10">
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/2 flex flex-col justify-center">
                 <h1 className="text-4xl md:text-5xl font-bold mb-4">¡Aprovecha las rebajas de Pascua!</h1>
@@ -127,19 +162,19 @@ export default function Home() {
 
         {/* Categories Tabs */}
         <section className="bg-gray-900 text-white py-8">
-          <div className="container mx-auto px-4">
-            <div className="flex border-b border-gray-700">
+          <div className="w-full px-4">
+            <div className="flex">
               <button className="mr-8 pb-2 border-b-2 border-white font-medium">Más populares</button>
               <button className="mr-8 pb-2 text-gray-400 font-medium">Temas</button>
               <button className="mr-8 pb-2 text-gray-400 font-medium">Edades</button>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-6">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-                <div key={item} className="aspect-square overflow-hidden rounded-lg">
+              {categoriaPopulares.map((set, index) => (
+                <div key={index} className="aspect-square overflow-hidden rounded-lg">
                   <Image
-                    src={`/placeholder.svg?height=200&width=200`}
-                    alt={`Categoría ${item}`}
+                    src={set.imgUrl}
+                    alt={`Categoría ${set.categoria}`}
                     width={200}
                     height={200}
                     className="w-full h-full object-cover"
@@ -152,7 +187,7 @@ export default function Home() {
 
         {/* Product Listings */}
         <section className="py-12">
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <h2 className="text-3xl font-bold text-center mb-8">Encuentra el set perfecto</h2>
 
             <div className="flex border-b border-gray-200 mb-8">
@@ -266,7 +301,7 @@ export default function Home() {
 
         {/* Most Built Models */}
         <section className="py-12 bg-gray-100">
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <h2 className="text-3xl font-bold text-center mb-4">Descubre los modelos más construidos</h2>
             <p className="text-center mb-10 text-gray-600">
               Emprende una nueva aventura de construcción con estos inspiradores sets LEGO®.
@@ -330,7 +365,7 @@ export default function Home() {
 
         {/* F1 Banner */}
         <section className="bg-black text-white py-12">
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/3 mb-6 md:mb-0">
                 <div className="flex items-center mb-4">
@@ -370,7 +405,7 @@ export default function Home() {
 
         {/* Discover More */}
         <section className="py-12">
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <h2 className="text-3xl font-bold mb-10">Descubre más</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -440,7 +475,7 @@ export default function Home() {
 
         {/* LEGO Insiders */}
         <section className="py-12 bg-gray-100">
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <div className="flex flex-col md:flex-row items-center bg-white rounded-lg overflow-hidden">
               <div className="md:w-1/3 p-8">
                 <Image
@@ -476,7 +511,7 @@ export default function Home() {
 
         {/* Welcome Message */}
         <section className="py-8 bg-gray-50">
-          <div className="container mx-auto px-4">
+          <div className="w-full px-4">
             <div className="bg-gray-100 p-6 rounded-lg">
               <p className="text-gray-700">
                 Te damos la bienvenida a la LEGO® Shop oficial, donde encontrarás fantásticos juguetes de construcción
@@ -532,7 +567,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white pt-12">
-        <div className="container mx-auto px-4">
+        <div className="w-full px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div>
               <Link href="/">

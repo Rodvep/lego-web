@@ -98,3 +98,28 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Añade estas reglas al final del archivo para asegurar que no haya overflow horizontal
+y que el contenido ocupe todo el ancho disponible */
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
