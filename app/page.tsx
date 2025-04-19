@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -12,45 +13,112 @@ import {
   Instagram,
   Youtube,
 } from "lucide-react"
+import { useState } from "react"
 
 const categoriaPopulares = [
   {
-    categoria : "Novedad",
-    imgUrl : "/images/image.png"
+    categoria: "Novedad",
+    imgUrl: "/images/"
   },
   {
-    categoria : "Exclusivos",
-    imgUrl : "/images/image.png"
+    categoria: "Exclusivos",
+    imgUrl: "/images/"
   },
   {
-    categoria : "Ofertas",
-    imgUrl : "/images/image.png"
+    categoria: "Ofertas",
+    imgUrl: "/images/"
   },
   {
-    categoria : "Todos los set",
-    imgUrl : "/images/image.png"
+    categoria: "Todos los set",
+    imgUrl: "/images/"
   },
   {
-    categoria : "Día del niño",
-    imgUrl : "/images/image.png"
+    categoria: "Día del niño",
+    imgUrl: "/images/"
   },
   {
-    categoria : "Día de la madre",
-    imgUrl : "/images/image.png"
+    categoria: "Día de la madre",
+    imgUrl: "/images/"
   },
   {
-    categoria : "Fórmula 1",
-    imgUrl : "/images/image.png"
+    categoria: "Fórmula 1",
+    imgUrl: "/images/"
   },
   {
-    categoria : "Obten recompensas",
-    imgUrl : "/images/image.png"
+    categoria: "Obten recompensas",
+    imgUrl: "/images/"
+  },
+]
+
+const categoriaTemas = [
+  {
+    tema: "classic",
+    imgUrl: "/images/"
+  },
+  {
+    tema: "disney",
+    imgUrl: "/images/"
+  },
+  {
+    tema: "harry potter",
+    imgUrl: "/images/"
+  },
+  {
+    tema: "marvel",
+    imgUrl: "/images/"
+  },
+  {
+    tema: "botanical",
+    imgUrl: "/images/"
+  },
+  {
+    tema: "artículos",
+    imgUrl: "/images/"
+  },
+  {
+    tema: "creator",
+    imgUrl: "/images/"
+  },
+  {
+    tema: "star wars",
+    imgUrl: "/images/"
+  },
+]
+
+const categoriaEdades = [
+  {
+    edad : "más de 18 años",
+    imgUrl : "/images/"
+  },
+  {
+    edad : "más de 13 años",
+    imgUrl : "/images/"
+  },
+  {
+    edad : "más de 9 años",
+    imgUrl : "/images/"
+  },
+  {
+    edad : "más de 6 años",
+    imgUrl : "/images/"
+  },
+  {
+    edad : "más de 4 años",
+    imgUrl : "/images/"
+  },
+  {
+    edad : "1,5 años",
+    imgUrl : "/images/"
   },
 ]
 
 export default function Home() {
+
+  const [categoriaActiva, setCategoriaActiva] = useState("populares")
+
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+
       {/* Top Navigation Bar */}
       <div className="bg-gray-100 py-5 px-4 hidden lg:block">
         <div className="w-full px-4 flex justify-between items-center">
@@ -161,26 +229,78 @@ export default function Home() {
         </section>
 
         {/* Categories Tabs */}
-        <section className="bg-gray-900 text-white py-8">
+        <section className="bg-gray-900 text-gray-400 py-8">
           <div className="w-full px-4">
             <div className="flex">
-              <button className="mr-8 pb-2 border-b-2 border-white font-medium">Más populares</button>
-              <button className="mr-8 pb-2 text-gray-400 font-medium">Temas</button>
-              <button className="mr-8 pb-2 text-gray-400 font-medium">Edades</button>
+              <button
+                onClick={() => setCategoriaActiva("populares")}
+                className={`mr-8 pb-2 font-medium hover:border-b-2 ${categoriaActiva === "populares"
+                    ? "border-b-2 text-white"
+                    : ""
+                  }`}
+              >
+                Más populares
+              </button>
+              <button
+                onClick={() => setCategoriaActiva("temas")}
+                className={`mr-8 pb-2 font-medium hover:border-b-2 ${categoriaActiva === "temas"
+                    ? "border-b-2 text-white"
+                    : ""
+                  }`}
+              >
+                Temas
+              </button>
+              <button
+                onClick={() => setCategoriaActiva("edades")}
+                className={`mr-8 pb-2 font-medium hover:border-b-2 ${categoriaActiva === "edades"
+                    ? "border-b-2 text-white"
+                    : ""
+                  }`}
+              >
+                Edades
+              </button>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-6">
-              {categoriaPopulares.map((set, index) => (
-                <div key={index} className="aspect-square overflow-hidden rounded-lg">
-                  <Image
-                    src={set.imgUrl}
-                    alt={`Categoría ${set.categoria}`}
-                    width={200}
-                    height={200}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
+              {categoriaActiva === "populares" &&
+                categoriaPopulares.map((set, index) => (
+                  <div key={index} className="aspect-square overflow-hidden rounded-lg">
+                    <Image
+                      src={set.imgUrl}
+                      alt={`Categoría ${set.categoria}`}
+                      width={200}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))
+              }
+              {categoriaActiva === "temas" &&
+                categoriaTemas.map((set, index) => (
+                  <div key={index} className="aspect-square overflow-hidden rounded-lg">
+                    <Image
+                      src={set.imgUrl}
+                      alt={`Categoría ${set.tema}`}
+                      width={200}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))
+              }
+              {categoriaActiva === "edades" &&
+                categoriaEdades.map((set, index) => (
+                  <div key={index} className="aspect-square overflow-hidden rounded-lg">
+                    <Image
+                      src={set.imgUrl}
+                      alt={`Categoría ${set.edad}`}
+                      width={200}
+                      height={200}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))
+              }
             </div>
           </div>
         </section>
