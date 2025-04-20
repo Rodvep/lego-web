@@ -252,7 +252,7 @@ export default function Home() {
       {/* Top Navigation Bar */}
       <div className="bg-gray-100 py-5 px-4 hidden lg:block">
         <div className="w-full px-4 flex justify-between items-center">
-          <Link href="/zona-de-juegos" className="flex items-center text-sm font-medium bg-blue-300 py-1 px-2 rounded-sm shadow-slate-400 shadow-sm hover:bg-white">
+          <Link href="https://kids.lego.com/" className="flex items-center text-sm font-medium bg-blue-300 py-1 px-2 rounded-sm shadow-slate-400 shadow-sm hover:bg-white">
             <ChevronLeft className="h-4 w-4 mr-1" />
             ZONA DE JUEGOS
           </Link>
@@ -262,7 +262,7 @@ export default function Home() {
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <p className="text-sm">Rebajas de Pascua, del 14/4 al 20/4*</p>
-              <Link href="/tienda" className="text-blue-600 ml-2 text-sm">
+              <Link href="https://www.lego.com/es-mx/categories/sales-and-deals?icmp=SW-SHGB-Standard-MT_SWB_Easter_Sale-MP-MT-UFX1LPBCRY" className="text-blue-600 ml-2 text-sm">
                 A la tienda
               </Link>
               <button className="ml-2">
@@ -271,11 +271,11 @@ export default function Home() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Link href="/login" className="text-sm">
+            <Link href="https://www.lego.com/es-mx/categories/sales-and-deals" className="text-sm">
               Iniciar sesión
             </Link>
             <div className="h-4 border-r border-gray-300"></div>
-            <Link href="/insiders" className="text-sm">
+            <Link href="https://www.lego.com/es-mx/insiders" className="text-sm">
               Únete a LEGO® Insiders
             </Link>
           </div>
@@ -296,17 +296,17 @@ export default function Home() {
             </Link>
             <nav className="hidden md:flex">
               <div className="space-x-8 mt-3">
-                <Link href="/comprar" className="font-bold text-black border-black hover:border-b-2">
+                <Link href="https://www.lego.com/es-mx" className="font-bold text-black border-black hover:border-b-2">
                   COMPRAR
                 </Link>
-                <Link href="/descubrir" className="font-bold text-black border-black hover:border-b-2">
+                <Link href="https://www.lego.com/es-mx" className="font-bold text-black border-black hover:border-b-2">
                   DESCUBRIR
                 </Link>
-                <Link href="/ayuda" className="font-bold text-black border-black hover:border-b-2">
+                <Link href="https://www.lego.com/es-mx" className="font-bold text-black border-black hover:border-b-2">
                   AYUDA
                 </Link>
               </div>
-              <Link href="/rebajas" className="bg-white px-4 py-2 rounded-md font-bold text-lego-red ml-8">
+              <Link href="https://www.lego.com/es-mx/categories/sales-and-deals" className="bg-white px-4 py-2 rounded-md font-bold text-lego-red ml-8 hover:bg-black hover:text-white">
                 REBAJAS
               </Link>
             </nav>
@@ -343,15 +343,15 @@ export default function Home() {
           </div>
           <div className="relative w-full px-4 py-16 md:py-24">
             <div className="max-w-xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black drop-shadow-lg">
                 ¡Aprovecha las rebajas de Pascua!
               </h1>
-              <p className="text-lg mb-6 text-white drop-shadow-md">
+              <p className="text-lg mb-6 text-black drop-shadow-md">
                 Consigue descuentos en una selección de sets del Save on selected sets 14/04 – 20/04*
               </p>
               <Link
-                href="/rebajas"
-                className="bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-3 px-6 rounded-full inline-flex items-center w-fit"
+                href="https://www.lego.com/es-mx/categories/sales-and-deals"
+                className="bg-yellow-900 hover:bg-yellow-800 text-white font-bold py-3 px-6 rounded-full inline-flex items-center w-fit hover:underline"
               >
                 Explora las rebajas
                 <ChevronRight className="ml-2 h-5 w-5" />
@@ -617,36 +617,40 @@ export default function Home() {
         </section>
 
         {/* F1 Banner */}
-        <section className="bg-black text-white py-12">
-          <div className="w-full px-4">
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/3 mb-6 md:mb-0">
-                <div className="flex items-center mb-4">
-                  <Image
-                    src="/placeholder.svg?height=60&width=60"
-                    alt="LEGO Logo"
-                    width={60}
-                    height={60}
-                    className="bg-lego-red p-1 mr-4"
-                  />
-                  <Image src="/placeholder.svg?height=40&width=120" alt="Formula 1" width={120} height={40} />
-                </div>
-
-                <div className="bg-black inline-flex rounded-full overflow-hidden mb-4">
-                  <span className="bg-black text-white px-4 py-2 font-medium">Coches de F1®</span>
-                  <span className="bg-gray-200 text-black px-4 py-2 font-medium">Pascua</span>
-                </div>
+        <section className="relative h-screen pb-10">
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
+            <Image
+              src="https://www.lego.com/cdn/cs/set/assets/blta171c0b841d859da/F1-Tabbed-202504-Page-Hero-Tall-Large.jpg?format=webply&fit=crop&quality=75&width=1600&height=700&dpr=1"
+              alt="LEGO Insiders Family"
+              width={1200}
+              height={600}
+              className="w-max h-full object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+          </div>
+          <div className="relative flex justify-center pt-5 text-white">
+            <div className="bg-gray-100 rounded-full p-0.5 flex">
+              <div className="bg-black rounded-full p-2 mr-1">
+                <button>Coches de F1</button>
               </div>
-
-              <div className="md:w-2/3 md:pl-8">
-                <h2 className="text-4xl font-bold mb-4">Construye la parrilla definitiva</h2>
-                <p className="mb-6">
-                  Descubre la gama completa de sets de F1® LEGO®, que hará las delicias de los fans de todas las edades
-                  y habilidades.
-                </p>
+              <div className="bg-transparent text-black rounded-full p-2">
+                <button>Construye la continuación de tu trilogía</button>
+              </div>
+            </div>
+          </div>
+          <div className="relative w-full px-4 py-16 md:pt-48 flex justify-end text-right pr-9">
+            <div className="max-w-3xl">
+              <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white drop-shadow-lg">
+                Construye la parrilla definitiva
+              </h1>
+              <p className="text-lg mb-6 text-white drop-shadow-md">
+                Descubre la gama completa de sets de F1® LEGO®, que hará las delicias de los fans de todas las edades y habilidades.
+              </p>
+              <div className="flex justify-end ">
                 <Link
-                  href="/f1"
-                  className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-3 px-6 rounded-full inline-flex items-center"
+                  href="https://www.lego.com/es-mx/categories/f1/f1-sets"
+                  className="bg-gray-200 hover:bg-white text-black font-bold py-2 px-6 rounded-full inline-flex  items-center w-fit hover:underline"
                 >
                   Comprar colección
                   <ChevronRight className="ml-2 h-5 w-5" />
@@ -675,7 +679,7 @@ export default function Home() {
                   Descubre ideas por ocasión, edad y precio. ¡Además de tarjetas regalo!
                 </p>
                 <Link
-                  href="/tienda"
+                  href="https://www.lego.com/es-mx/gifts"
                   className="border border-gray-300 hover:bg-gray-100 text-black font-medium py-2 px-6 rounded-full inline-flex items-center justify-center w-fit"
                 >
                   A la tienda
@@ -695,7 +699,7 @@ export default function Home() {
                   Consulta nuestra biblioteca de artículos y encuentra ideas e inspiración.
                 </p>
                 <Link
-                  href="/descubrir"
+                  href="https://www.lego.com/es-mx/discover"
                   className="border border-gray-300 hover:bg-gray-100 text-black font-medium py-2 px-6 rounded-full inline-flex items-center justify-center w-fit"
                 >
                   Descubrir
@@ -716,7 +720,7 @@ export default function Home() {
                   visualízalos en 3D, y mucho más.
                 </p>
                 <Link
-                  href="/descargar"
+                  href="https://www.lego.com/es-mx/builder-app"
                   className="border border-gray-300 hover:bg-gray-100 text-black font-medium py-2 px-6 rounded-full inline-flex items-center justify-center w-fit"
                 >
                   Descargar
@@ -740,19 +744,19 @@ export default function Home() {
           </div>
 
           <div className="relative w-full flex justify-center text-center">
-              <div className="w-1/2 p-8">
-                <h2 className="text-xl font-bold mb-4 ">
-                  Accede a un mundo de recompensas, experiencias, regalos y muchas cosas más exclusivas para miembros.
-                </h2>
-                <Link
-                  href="/miembro"
-                  className="bg-gray-500 hover:bg-gray-600 text-white text-sm font-bold py-1 px-3 rounded-full inline-flex items-center hover:underline"
-                >
-                  Hazte miembro
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </div>
+            <div className="w-1/2 p-8">
+              <h2 className="text-xl font-bold mb-4 ">
+                Accede a un mundo de recompensas, experiencias, regalos y muchas cosas más exclusivas para miembros.
+              </h2>
+              <Link
+                href="/miembro"
+                className="bg-gray-500 hover:bg-gray-600 text-white text-sm font-bold py-1 px-3 rounded-full inline-flex items-center hover:underline"
+              >
+                Hazte miembro
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
+          </div>
         </section>
 
         {/* Welcome Message */}
