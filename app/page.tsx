@@ -87,34 +87,164 @@ const categoriaTemas = [
 
 const categoriaEdades = [
   {
-    edad : "más de 18 años",
-    imgUrl : "/images/"
+    edad: "más de 18 años",
+    imgUrl: "/images/"
   },
   {
-    edad : "más de 13 años",
-    imgUrl : "/images/"
+    edad: "más de 13 años",
+    imgUrl: "/images/"
   },
   {
-    edad : "más de 9 años",
-    imgUrl : "/images/"
+    edad: "más de 9 años",
+    imgUrl: "/images/"
   },
   {
-    edad : "más de 6 años",
-    imgUrl : "/images/"
+    edad: "más de 6 años",
+    imgUrl: "/images/"
   },
   {
-    edad : "más de 4 años",
-    imgUrl : "/images/"
+    edad: "más de 4 años",
+    imgUrl: "/images/"
   },
   {
-    edad : "1,5 años",
-    imgUrl : "/images/"
+    edad: "1,5 años",
+    imgUrl: "/images/"
   },
 ]
 
+const productosDestacados =
+  [
+    {
+      imgUrl: "/images/",
+      name: "Coche Ferrari SF-24 F1",
+      price: "$5,499.00",
+      age: "18+",
+      pieces: "1361",
+    },
+    {
+      imgUrl: "/images/",
+      name: "Mario Kart™: Mario y Kart estándar",
+      price: "$4,199.00",
+      age: "18+",
+      pieces: "1972",
+    },
+    {
+      imgUrl: "/images/",
+      name: "Castillo de Bella y Bestia",
+      price: "$6,899.00",
+      age: "18+",
+      pieces: "2916",
+    },
+    {
+      imgUrl: "/images/",
+      name: "Ramillete Rayos de Sol",
+      price: "$749.00",
+      age: "9+",
+      pieces: "373",
+    },
+    {
+      imgUrl: "/images/",
+      name: "Barco de Vapor Fluvial",
+      price: "$7,999.00",
+      age: "18+",
+      pieces: "4090",
+    },
+  ]
+const productosRecomendados =
+  [
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "+",
+      pieces: "",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+  ]
+const productosCochesDeF1 =
+  [
+    {
+      imgUrl: "/images/",
+      name: "Coche Ferrari SF-24 F1",
+      price: "$5,499.00",
+      age: "18+",
+      pieces: "1361",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+    {
+      imgUrl: "/images/",
+      name: "",
+      price: "",
+      age: "",
+      pieces: "",
+    },
+  ]
 export default function Home() {
 
   const [categoriaActiva, setCategoriaActiva] = useState("populares")
+  const [listaProductos, setListaProductos] = useState("destacados")
+
+  const obtenerListaProductos = () => {
+    switch (listaProductos) {
+      case "destacados":
+        return productosDestacados;
+      case "recomendados":
+        return productosRecomendados;
+      case "cochesDeF1":
+        return productosCochesDeF1;
+      default:
+        return [];
+    }
+  }
+
+  const listaProductosSeleccionada = obtenerListaProductos();
 
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
@@ -158,23 +288,24 @@ export default function Home() {
           <div className="flex items-center">
             <Link href="/" className="mr-8">
               <Image
-                src="/placeholder.svg?height=60&width=60"
+                src="https://assets.lego.com/logos/v4.5.0/brand-lego.svg"
                 alt="LEGO Logo"
                 width={60}
                 height={60}
-                className="bg-lego-red p-1"
               />
             </Link>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="/comprar" className="font-bold text-black">
-                COMPRAR
-              </Link>
-              <Link href="/descubrir" className="font-bold text-black">
-                DESCUBRIR
-              </Link>
-              <Link href="/ayuda" className="font-bold text-black">
-                AYUDA
-              </Link>
+            <nav className="hidden md:flex">
+              <div className="space-x-8 mt-3">
+                <Link href="/comprar" className="font-bold text-black border-black hover:border-b-2">
+                  COMPRAR
+                </Link>
+                <Link href="/descubrir" className="font-bold text-black border-black hover:border-b-2">
+                  DESCUBRIR
+                </Link>
+                <Link href="/ayuda" className="font-bold text-black border-black hover:border-b-2">
+                  AYUDA
+                </Link>
+              </div>
               <Link href="/rebajas" className="bg-white px-4 py-2 rounded-md font-bold text-lego-red ml-8">
                 REBAJAS
               </Link>
@@ -199,31 +330,32 @@ export default function Home() {
 
       <main>
         {/* Hero Banner */}
-        <section className="bg-lego-yellow pb-10">
-          <div className="w-full px-4">
-            <div className="flex flex-col md:flex-row">
-              <div className="md:w-1/2 flex flex-col justify-center">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">¡Aprovecha las rebajas de Pascua!</h1>
-                <p className="text-lg mb-6">
-                  Consigue descuentos en una selección de sets del Save on selected sets 14/04 – 20/04*
-                </p>
-                <Link
-                  href="/rebajas"
-                  className="bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-3 px-6 rounded-full inline-flex items-center w-fit"
-                >
-                  Explora las rebajas
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </div>
-              <div className="md:w-1/2 mt-6 md:mt-0">
-                <Image
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Pascua LEGO"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
-              </div>
+        <section className="relative bg-lego-yellow pb-10">
+          <div className="absolute top-0  h-full w-full overflow-hidden">
+            <Image
+              src="https://www.lego.com/cdn/cs/set/assets/bltbe660bfc7b79da01/Easter-202504-LP-HeroSK-Large-Offers.jpg?format=webply&fit=crop&quality=75&width=1600&height=500&dpr=1"
+              alt="Pascua LEGO"
+              width={20}
+              height={20}
+              className="w-full h-full object-cover"
+              priority
+            />
+          </div>
+          <div className="relative w-full px-4 py-16 md:py-24">
+            <div className="max-w-xl">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg">
+                ¡Aprovecha las rebajas de Pascua!
+              </h1>
+              <p className="text-lg mb-6 text-white drop-shadow-md">
+                Consigue descuentos en una selección de sets del Save on selected sets 14/04 – 20/04*
+              </p>
+              <Link
+                href="/rebajas"
+                className="bg-yellow-700 hover:bg-yellow-800 text-white font-bold py-3 px-6 rounded-full inline-flex items-center w-fit"
+              >
+                Explora las rebajas
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
           </div>
         </section>
@@ -235,8 +367,8 @@ export default function Home() {
               <button
                 onClick={() => setCategoriaActiva("populares")}
                 className={`mr-8 pb-2 font-medium hover:border-b-2 ${categoriaActiva === "populares"
-                    ? "border-b-2 text-white"
-                    : ""
+                  ? "border-b-2 text-white"
+                  : ""
                   }`}
               >
                 Más populares
@@ -244,8 +376,8 @@ export default function Home() {
               <button
                 onClick={() => setCategoriaActiva("temas")}
                 className={`mr-8 pb-2 font-medium hover:border-b-2 ${categoriaActiva === "temas"
-                    ? "border-b-2 text-white"
-                    : ""
+                  ? "border-b-2 text-white"
+                  : ""
                   }`}
               >
                 Temas
@@ -253,8 +385,8 @@ export default function Home() {
               <button
                 onClick={() => setCategoriaActiva("edades")}
                 className={`mr-8 pb-2 font-medium hover:border-b-2 ${categoriaActiva === "edades"
-                    ? "border-b-2 text-white"
-                    : ""
+                  ? "border-b-2 text-white"
+                  : ""
                   }`}
               >
                 Edades
@@ -310,11 +442,31 @@ export default function Home() {
           <div className="w-full px-4">
             <h2 className="text-3xl font-bold text-center mb-8">Encuentra el set perfecto</h2>
 
-            <div className="flex border-b border-gray-200 mb-8">
-              <button className="mr-8 pb-2 border-b-2 border-black font-medium">Destacados</button>
-              <button className="mr-8 pb-2 text-gray-500 font-medium">Recomendados</button>
-              <button className="mr-8 pb-2 text-gray-500 font-medium">Coches de F1®</button>
-
+            <div className="flex mb-8">
+              <button onClick={() => setListaProductos("destacados")}
+                className={`mr-8 pb-2 font-medium hover:border-b-2 border-black ${listaProductos === "destacados"
+                  ? "border-b-2  text-black"
+                  : "text-gray-500"
+                  }`}
+              >
+                Destacados
+              </button>
+              <button onClick={() => setListaProductos("recomendados")}
+                className={`mr-8 pb-2 font-medium hover:border-b-2 border-black ${listaProductos === "recomendados"
+                  ? "border-b-2  text-black"
+                  : "text-gray-500"
+                  }`}
+              >
+                Recomendados
+              </button>
+              <button onClick={() => setListaProductos("cochesDeF1")}
+                className={`mr-8 pb-2 font-medium hover:border-b-2 border-black ${listaProductos === "cochesDeF1"
+                  ? "border-b-2 text-black"
+                  : "text-gray-500"
+                  }`}
+              >
+                Coches de F1®
+              </button>
               <div className="ml-auto">
                 <button className="p-2 rounded-full border border-gray-300 mr-2">
                   <ChevronLeft className="h-5 w-5" />
@@ -326,38 +478,8 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-              {[
-                {
-                  name: "Coche Ferrari SF-24 F1",
-                  price: "$5,499.00",
-                  age: "18+",
-                  pieces: "1361",
-                },
-                {
-                  name: "Mario Kart™: Mario y Kart estándar",
-                  price: "$4,199.00",
-                  age: "18+",
-                  pieces: "1972",
-                },
-                {
-                  name: "Castillo de Bella y Bestia",
-                  price: "$6,899.00",
-                  age: "18+",
-                  pieces: "2916",
-                },
-                {
-                  name: "Ramillete Rayos de Sol",
-                  price: "$749.00",
-                  age: "9+",
-                  pieces: "373",
-                },
-                {
-                  name: "Barco de Vapor Fluvial",
-                  price: "$7,999.00",
-                  age: "18+",
-                  pieces: "4090",
-                },
-              ].map((product, index) => (
+
+              {listaProductosSeleccionada.map((product, index) => (
                 <div key={index} className="border rounded-lg overflow-hidden group">
                   <div className="relative">
                     <div className="absolute top-4 left-4 z-10">
@@ -369,7 +491,7 @@ export default function Home() {
                       <span className="bg-lego-yellow text-black px-3 py-1 font-medium text-sm">Novedad</span>
                     </div>
                     <Image
-                      src={`/placeholder.svg?height=300&width=300`}
+                      src={product.imgUrl}
                       alt={product.name}
                       width={300}
                       height={300}
@@ -381,7 +503,7 @@ export default function Home() {
                     <div className="flex items-center mb-2 text-sm">
                       <span className="flex items-center mr-3">
                         <Image
-                          src="/placeholder.svg?height=20&width=20"
+                          src="https://assets.lego.com/icons/v7.3.0/birthday-cake.svg"
                           alt="Age"
                           width={20}
                           height={20}
@@ -391,7 +513,7 @@ export default function Home() {
                       </span>
                       <span className="flex items-center">
                         <Image
-                          src="/placeholder.svg?height=20&width=20"
+                          src="https://assets.lego.com/icons/v7.3.0/brick-one-by-one-iso.svg"
                           alt="Pieces"
                           width={20}
                           height={20}
@@ -427,8 +549,8 @@ export default function Home() {
               Emprende una nueva aventura de construcción con estos inspiradores sets LEGO®.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="row-span-2 col-span-1">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="relative">
                 <Image
                   src="/placeholder.svg?height=600&width=400"
                   alt="LEGO Model"
@@ -436,48 +558,59 @@ export default function Home() {
                   height={800}
                   className="w-full h-auto rounded-lg"
                 />
-              </div>
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="LEGO Galaxy"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-lg"
-                />
-                <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white shadow-md">
+                <button className="absolute bottom-4 left-4 p-2 rounded-full bg-white shadow-md">
                   <Plus className="h-5 w-5" />
                 </button>
               </div>
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="LEGO Cat"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-lg"
-                />
-                <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white shadow-md">
-                  <Plus className="h-5 w-5" />
-                </button>
-              </div>
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="LEGO F1"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-              <div className="relative">
-                <Image
-                  src="/placeholder.svg?height=300&width=400"
-                  alt="LEGO Flowers"
-                  width={400}
-                  height={300}
-                  className="w-full h-auto rounded-lg"
-                />
+              <div className="grid grid-cols-2 gap-6">
+                <div className="relative">
+                  <Image
+                    src="/placeholder.svg?height=300&width=400"
+                    alt="LEGO Galaxy"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white shadow-md">
+                    <Plus className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/placeholder.svg?height=300&width=400"
+                    alt="LEGO Cat"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white shadow-md">
+                    <Plus className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/placeholder.svg?height=300&width=400"
+                    alt="LEGO F1"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white shadow-md">
+                    <Plus className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="relative">
+                  <Image
+                    src="/placeholder.svg?height=300&width=400"
+                    alt="LEGO Flowers"
+                    width={400}
+                    height={300}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <button className="absolute bottom-4 right-4 p-2 rounded-full bg-white shadow-md">
+                    <Plus className="h-5 w-5" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -594,39 +727,32 @@ export default function Home() {
         </section>
 
         {/* LEGO Insiders */}
-        <section className="py-12 bg-gray-100">
-          <div className="w-full px-4">
-            <div className="flex flex-col md:flex-row items-center bg-white rounded-lg overflow-hidden">
-              <div className="md:w-1/3 p-8">
-                <Image
-                  src="/placeholder.svg?height=100&width=200"
-                  alt="LEGO Insiders"
-                  width={200}
-                  height={100}
-                  className="mb-6"
-                />
-                <h2 className="text-2xl font-bold mb-4">
+        <section className="relative">
+          <div className="absolute inset-0 w-full h-full overflow-hidden">
+            <Image
+              src="https://www.lego.com/cdn/cs/set/assets/blt8c8829195c9fc54f/Insider-v1-Page-StaticHero-Short-Large.jpg?format=webply&fit=crop&quality=75&width=1600&height=200&dpr=1"
+              alt="LEGO Insiders Family"
+              width={800}
+              height={400}
+              className="w-max h-max"
+              priority
+            />
+          </div>
+
+          <div className="relative w-full flex justify-center text-center">
+              <div className="w-1/2 p-8">
+                <h2 className="text-xl font-bold mb-4 ">
                   Accede a un mundo de recompensas, experiencias, regalos y muchas cosas más exclusivas para miembros.
                 </h2>
                 <Link
                   href="/miembro"
-                  className="bg-gray-800 hover:bg-black text-white font-bold py-3 px-6 rounded-full inline-flex items-center"
+                  className="bg-gray-500 hover:bg-gray-600 text-white text-sm font-bold py-1 px-3 rounded-full inline-flex items-center hover:underline"
                 >
                   Hazte miembro
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
-              <div className="md:w-2/3">
-                <Image
-                  src="/placeholder.svg?height=400&width=800"
-                  alt="LEGO Insiders Family"
-                  width={800}
-                  height={400}
-                  className="w-full h-auto"
-                />
-              </div>
             </div>
-          </div>
         </section>
 
         {/* Welcome Message */}
@@ -677,7 +803,7 @@ export default function Home() {
                 </Link>
                 . Podrás comprar fácilmente juguetes con los que regalar horas de diversión y juego.
               </p>
-              <Link href="/mas" className="text-blue-600 hover:underline font-medium">
+              <Link href="https://www.lego.com/es-mx" className="text-blue-600 hover:underline font-medium">
                 Lee mas
               </Link>
             </div>
@@ -692,17 +818,17 @@ export default function Home() {
             <div>
               <Link href="/">
                 <Image
-                  src="/placeholder.svg?height=80&width=80"
+                  src="https://assets.lego.com/logos/v4.5.0/brand-lego.svg"
                   alt="LEGO Logo"
                   width={80}
                   height={80}
-                  className="bg-lego-red p-1 mb-6"
+                  className="mb-6"
                 />
               </Link>
 
               <div className="flex items-center mb-6 border border-gray-700 rounded-md p-2 w-fit">
                 <Image
-                  src="/placeholder.svg?height=20&width=20"
+                  src="https://img.freepik.com/vector-gratis/ilustracion-bandera-mexico_53876-18169.jpg?semt=ais_hybrid&w=740"
                   alt="Location"
                   width={20}
                   height={20}
@@ -711,96 +837,96 @@ export default function Home() {
                 <span>México</span>
               </div>
 
-              <Link href="/tarjetas-regalo" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/gift-cards" className="block mb-4 hover:underline">
                 Tarjetas regalo
               </Link>
-              <Link href="/inspiracion" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/lego-set-inspiration" className="block mb-4 hover:underline">
                 Encuentra la inspiración
               </Link>
-              <Link href="/catalogos" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/themes/brand-catalogue" className="block mb-4 hover:underline">
                 Catálogos LEGO
               </Link>
             </div>
 
             <div>
               <h3 className="text-xl font-bold mb-6">QUIÉNES SOMOS</h3>
-              <Link href="/about" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/aboutus" className="block mb-4 hover:underline">
                 The LEGO Group
               </Link>
-              <Link href="/noticias" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/aboutus/news-room" className="block mb-4 hover:underline">
                 Noticias LEGO®
               </Link>
-              <Link href="/sostenibilidad" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/sustainability" className="block mb-4 hover:underline">
                 Sostenibilidad
               </Link>
-              <Link href="/transparencia" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/cdn/cs/set/assets/blte42cb66f699d7db6/LEGO_Modern_Slavery_Transparency_Statement_2023_FINAL.pdf" className="block mb-4 hover:underline">
                 Declaración de transparencia de la cadena de suministro
               </Link>
-              <Link href="/certificacion" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/aboutus/lego-group/product-safety" className="block mb-4 hover:underline">
                 Certificación de productos LEGO
               </Link>
-              <Link href="/empleo" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/careers" className="block mb-4 hover:underline">
                 Ofertas de empleo LEGO
               </Link>
-              <Link href="/compliance" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/compliance-line" className="block mb-4 hover:underline">
                 LEGO Compliance Line
               </Link>
             </div>
 
             <div>
               <h3 className="text-xl font-bold mb-6">ATENCIÓN AL CLIENTE</h3>
-              <Link href="/contacto" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/service" className="block mb-4 hover:underline">
                 Ponte en contacto con nosotros
               </Link>
-              <Link href="/instrucciones" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/service/buildinginstructions" className="block mb-4 hover:underline">
                 Instrucciones de construcción
               </Link>
-              <Link href="/repuesto" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/service/replacementparts" className="block mb-4 hover:underline">
                 Piezas de repuesto
               </Link>
-              <Link href="/envios" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/page/shipping-handling" className="block mb-4 hover:underline">
                 Envíos y devoluciones
               </Link>
-              <Link href="/pago" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/page/payment-methods" className="block mb-4 hover:underline">
                 Métodos de pago
               </Link>
-              <Link href="/terminos" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/page/terms-and-conditions" className="block mb-4 hover:underline">
                 Términos y condiciones
               </Link>
-              <Link href="/retirados" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/service/product-recalls" className="block mb-4 hover:underline">
                 Productos retirados
               </Link>
             </div>
 
             <div>
               <h3 className="text-xl font-bold mb-6">ATRACCIONES</h3>
-              <Link href="/legohouse" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/attractions#blt281a0fddfffea922" className="block mb-4 hover:underline">
                 LEGO® House
               </Link>
-              <Link href="/legolandparks" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/attractions#blt2d039b65946ba98d" className="block mb-4 hover:underline">
                 LEGOLAND® Parks
               </Link>
-              <Link href="/discovery" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/attractions#blt7819df81c4e1b774" className="block mb-4 hover:underline">
                 LEGOLAND Discovery Centers
               </Link>
 
               <h3 className="text-xl font-bold mt-8 mb-6">MÁS INFORMACIÓN</h3>
-              <Link href="/magazine" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/magazine" className="block mb-4 hover:underline">
                 LEGO® Magazine (GRATIS)
               </Link>
-              <Link href="/education" className="block mb-4 hover:underline">
+              <Link href="http://education.lego.com/" className="block mb-4 hover:underline">
                 LEGO Education
               </Link>
-              <Link href="/ideas" className="block mb-4 hover:underline">
+              <Link href="https://ideas.lego.com/" className="block mb-4 hover:underline">
                 LEGO Ideas
               </Link>
-              <Link href="/foundation" className="block mb-4 hover:underline">
+              <Link href="https://learningthroughplay.com/" className="block mb-4 hover:underline">
                 LEGO Foundation
               </Link>
-              <Link href="/estudiantes" className="block mb-4 hover:underline">
+              <Link href="https://connect.studentbeans.com/v4/hosted/lego/mx" className="block mb-4 hover:underline">
                 Ofertas para estudiantes
               </Link>
-              <Link href="/socios" className="block mb-4 hover:underline">
+              <Link href="https://www.lego.com/es-mx/page/affiliate-program" className="block mb-4 hover:underline">
                 Programa para socios
               </Link>
             </div>
@@ -825,16 +951,16 @@ export default function Home() {
               <div>
                 <h3 className="text-lg font-bold mb-4">SÍGUENOS</h3>
                 <div className="flex space-x-4">
-                  <Link href="https://facebook.com/lego" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
+                  <Link href="https://www.facebook.com/LEGOEsp/" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
                     <Facebook className="h-5 w-5" />
                   </Link>
-                  <Link href="https://twitter.com/lego" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
+                  <Link href="https://twitter.com/LEGO_Group" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
                     <Twitter className="h-5 w-5" />
                   </Link>
-                  <Link href="https://instagram.com/lego" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
+                  <Link href="https://www.instagram.com/lego" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
                     <Instagram className="h-5 w-5" />
                   </Link>
-                  <Link href="https://youtube.com/lego" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
+                  <Link href="https://m.youtube.com/user/LEGO" className="bg-gray-800 p-3 rounded-full hover:bg-gray-700">
                     <Youtube className="h-5 w-5" />
                   </Link>
                 </div>
@@ -844,22 +970,22 @@ export default function Home() {
 
           <div className="border-t border-gray-800 py-8">
             <div className="flex flex-wrap gap-6">
-              <Link href="/privacidad" className="text-sm hover:underline">
+              <Link href="https://www.lego.com/es-mx/legal/legal-notice/privacy-policy" className="text-sm hover:underline">
                 Política de privacidad
               </Link>
-              <Link href="/cookies" className="text-sm hover:underline">
+              <Link href="https://www.lego.com/es-mx/cookie-policy" className="text-sm hover:underline">
                 Cookies
               </Link>
-              <Link href="/legal" className="text-sm hover:underline">
+              <Link href="https://www.lego.com/es-mx/legal/notices-and-policies/legal-notice" className="text-sm hover:underline">
                 Aviso legal
               </Link>
-              <Link href="/uso" className="text-sm hover:underline">
+              <Link href="https://www.lego.com/es-mx/legal/legal-notice" className="text-sm hover:underline">
                 Cláusulas de uso
               </Link>
-              <Link href="/accesibilidad" className="text-sm hover:underline">
+              <Link href="https://www.lego.com/es-mx/page/accessibility" className="text-sm hover:underline">
                 Accesibilidad
               </Link>
-              <Link href="/configuracion" className="text-sm hover:underline">
+              <Link href="https://www.lego.com/es-mx" className="text-sm hover:underline">
                 Configuración de cookies
               </Link>
             </div>
