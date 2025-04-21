@@ -226,10 +226,35 @@ const productosCochesDeF1 =
       pieces: "",
     },
   ]
+
+const datosSeccionF1 =
+  [
+    {
+      titulo: "Construye la parrilla definitiva",
+      desc: "Descubre la gama completa de sets de F1® LEGO®, que hará las delicias de los fans de todas las edades y habilidades.",
+      btnTxt: "Comprar colección",
+      estiloTxt: "relative w-full px-4 py-16 md:pt-48 flex justify-end text-center lg:text-right pr-9",
+      alighnBtn: "flex justify-center lg:justify-end",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blta171c0b841d859da/F1-Tabbed-202504-Page-Hero-Tall-Large.jpg?format=webply&fit=crop&quality=75&width=1600&height=700&dpr=1",
+    }
+  ]
+const datosSeccionTrilogia =
+  [
+    {
+      titulo: "Construye la continuación de tu trilogía",
+      desc: "Vuelve a la Tierra Media y diviértete como un hobbit con el set El Señor de los Anillos: La Comarca de LEGO® Icons.",
+      btnTxt: "A la tienda",
+      estiloTxt: "relative w-full px-4 py-16 md:pt-48 flex justify-start text-center lg:text-left pr-9",
+      alighnBtn: "flex justify-center lg:justify-start",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt36cf31b49c18e12f/10354-LOTR-Campaign-HP-Tall-Hero-Desktop.png?format=webply&fit=crop&quality=70&width=1600&height=700&dpr=1.5",
+    }
+  ]
+
 export default function Home() {
 
   const [categoriaActiva, setCategoriaActiva] = useState("populares")
   const [listaProductos, setListaProductos] = useState("destacados")
+  const [seccionF1, setSeccionF1] = useState("F1")
 
   const obtenerListaProductos = () => {
     switch (listaProductos) {
@@ -243,8 +268,18 @@ export default function Home() {
         return [];
     }
   }
-
   const listaProductosSeleccionada = obtenerListaProductos();
+
+  const obtenerDatosSeccionF1 = () => {
+    if (seccionF1 != "trilogia") {
+      return datosSeccionF1;
+    }
+    else {
+      return datosSeccionTrilogia;
+    }
+  }
+  const datosSeccionF1Seleccionada = obtenerDatosSeccionF1();
+
 
   return (
     <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
@@ -330,8 +365,8 @@ export default function Home() {
 
       <main>
         {/* Hero Banner */}
-        <section className="relative bg-lego-yellow pb-10">
-          <div className="absolute top-0  h-full w-full overflow-hidden">
+        <section className="relative bg-lego-yellow pb-10 h-screen lg:h-max">
+          <div className="absolute top-0 h-screen lg:h-full lg:w-full lg:overflow-hidden">
             <Image
               src="https://www.lego.com/cdn/cs/set/assets/bltbe660bfc7b79da01/Easter-202504-LP-HeroSK-Large-Offers.jpg?format=webply&fit=crop&quality=75&width=1600&height=500&dpr=1"
               alt="Pascua LEGO"
@@ -341,7 +376,7 @@ export default function Home() {
               priority
             />
           </div>
-          <div className="relative w-full px-4 py-16 md:py-24">
+          <div className="relative w-full px-4 py-20 md:py-24">
             <div className="max-w-xl">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black drop-shadow-lg">
                 ¡Aprovecha las rebajas de Pascua!
@@ -616,49 +651,60 @@ export default function Home() {
           </div>
         </section>
 
-        {/* F1 Banner */}
-        <section className="relative h-screen pb-10">
-          <div className="absolute inset-0 w-full h-full overflow-hidden">
-            <Image
-              src="https://www.lego.com/cdn/cs/set/assets/blta171c0b841d859da/F1-Tabbed-202504-Page-Hero-Tall-Large.jpg?format=webply&fit=crop&quality=75&width=1600&height=700&dpr=1"
-              alt="LEGO Insiders Family"
-              width={1200}
-              height={600}
-              className="w-max h-full object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-30"></div>
-          </div>
-          <div className="relative flex justify-center pt-5 text-white">
-            <div className="bg-gray-100 rounded-full p-0.5 flex">
-              <div className="bg-black rounded-full p-2 mr-1">
-                <button>Coches de F1</button>
-              </div>
-              <div className="bg-transparent text-black rounded-full p-2">
-                <button>Construye la continuación de tu trilogía</button>
+        {/* F1 y trilogia banner */}
+        {datosSeccionF1Seleccionada.map((datos, index) => (
+
+          <section key={index} className="relative h-max pb-10">
+            <div className="absolute inset-0 overflow-hidden">
+              <Image
+                src={datos.imgUrl}
+                alt="Img"
+                width={1200}
+                height={600}
+                className="w-max h-full lg:h-max object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+            </div>
+            <div className="relative flex justify-center pt-5 text-white mx-11">
+              <div className="bg-gray-100 rounded-full p-0.5 flex">
+                <button onClick={() => setSeccionF1("F1")}
+                  className={`rounded-full p-2 mr-1 ${seccionF1 === "F1"
+                    ? "bg-black"
+                    : "text-black"
+                    }`}>
+                  Coches de F1
+                </button>
+                <button onClick={() => setSeccionF1("trilogia")}
+                  className={`rounded-full p-2 ${seccionF1 === "trilogia"
+                    ? "bg-black"
+                    : "text-black"
+                    }`}>
+                  Construye la continuación de tu trilogía
+                </button>
               </div>
             </div>
-          </div>
-          <div className="relative w-full px-4 py-16 md:pt-48 flex justify-end text-right pr-9">
-            <div className="max-w-3xl">
-              <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white drop-shadow-lg">
-                Construye la parrilla definitiva
-              </h1>
-              <p className="text-lg mb-6 text-white drop-shadow-md">
-                Descubre la gama completa de sets de F1® LEGO®, que hará las delicias de los fans de todas las edades y habilidades.
-              </p>
-              <div className="flex justify-end ">
-                <Link
-                  href="https://www.lego.com/es-mx/categories/f1/f1-sets"
-                  className="bg-gray-200 hover:bg-white text-black font-bold py-2 px-6 rounded-full inline-flex  items-center w-fit hover:underline"
-                >
-                  Comprar colección
-                  <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
+            <div className={datos.estiloTxt}>
+              <div className="max-w-3xl">
+                <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white drop-shadow-lg">
+                  {datos.titulo}
+                </h1>
+                <p className="text-lg mb-6 text-white drop-shadow-md">
+                  {datos.desc}
+                </p>
+                <div className={datos.alighnBtn}>
+                  <Link
+                    href="https://www.lego.com/es-mx/categories/f1/f1-sets"
+                    className="bg-gray-200 hover:bg-white text-black font-bold py-2 px-6 rounded-full inline-flex  items-center w-fit hover:underline"
+                  >
+                    {datos.btnTxt}
+                    <ChevronRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ))}
 
         {/* Discover More */}
         <section className="py-12">
@@ -738,14 +784,14 @@ export default function Home() {
               alt="LEGO Insiders Family"
               width={800}
               height={400}
-              className="w-max h-max"
+              className="lg:w-max h-full lg:h-max"
               priority
             />
           </div>
-
+          <div className="absolute inset-0 bg-black bg-opacity-30 lg:hidden"></div>
           <div className="relative w-full flex justify-center text-center">
-            <div className="w-1/2 p-8">
-              <h2 className="text-xl font-bold mb-4 ">
+            <div className="lg:w-1/2 p-8">
+              <h2 className="lg:text-xl font-bold mb-4 text-white lg:text-black">
                 Accede a un mundo de recompensas, experiencias, regalos y muchas cosas más exclusivas para miembros.
               </h2>
               <Link
