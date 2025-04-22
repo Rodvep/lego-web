@@ -18,139 +18,139 @@ import { useState } from "react"
 const categoriaPopulares = [
   {
     categoria: "Novedad",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt2ddf29f38b3aef84/Updated-Home-AdvQuicklink-202504-NEW76968.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt2ddf29f38b3aef84/Updated-Home-AdvQuicklink-202504-NEW76968.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt2ddf29f38b3aef84/Updated-Home-AdvQuicklink-202504-NEW76968.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt2ddf29f38b3aef84/Updated-Home-AdvQuicklink-202504-NEW76968.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     categoria: "Exclusivos",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt80cbe5c7845ebfc0/Updated-Home-AdvQuicklink-202504-Exc-10354.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt80cbe5c7845ebfc0/Updated-Home-AdvQuicklink-202504-Exc-10354.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt80cbe5c7845ebfc0/Updated-Home-AdvQuicklink-202504-Exc-10354.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt80cbe5c7845ebfc0/Updated-Home-AdvQuicklink-202504-Exc-10354.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     categoria: "Ofertas",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltbf37b7817eb90e6b/Updated-Home-AdvQuicklink-202504-Offers.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/bltbf37b7817eb90e6b/Updated-Home-AdvQuicklink-202504-Offers.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/bltbf37b7817eb90e6b/Updated-Home-AdvQuicklink-202504-Offers.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/bltbf37b7817eb90e6b/Updated-Home-AdvQuicklink-202504-Offers.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     categoria: "Todos los set",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt0709a5e8e6675fb2/Updated-Home-AdvQuicklink-202504-Allsets.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt0709a5e8e6675fb2/Updated-Home-AdvQuicklink-202504-Allsets.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt0709a5e8e6675fb2/Updated-Home-AdvQuicklink-202504-Allsets.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt0709a5e8e6675fb2/Updated-Home-AdvQuicklink-202504-Allsets.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     categoria: "Día del niño",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltde49e837637ee573/image_(7).jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/bltde49e837637ee573/image_(7).jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/bltde49e837637ee573/image_(7).jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/bltde49e837637ee573/image_(7).jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     categoria: "Día de la madre",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltbd0bf71e403f77f7/Updated-Home-AdvQuicklink-202504-MothersDay-2.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/bltbd0bf71e403f77f7/Updated-Home-AdvQuicklink-202504-MothersDay-2.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/bltbd0bf71e403f77f7/Updated-Home-AdvQuicklink-202504-MothersDay-2.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/bltbd0bf71e403f77f7/Updated-Home-AdvQuicklink-202504-MothersDay-2.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     categoria: "Fórmula 1",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt764def4d462707a5/Updated-Home-AdvQuicklink-202504-F1.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt764def4d462707a5/Updated-Home-AdvQuicklink-202504-F1.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt764def4d462707a5/Updated-Home-AdvQuicklink-202504-F1.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt764def4d462707a5/Updated-Home-AdvQuicklink-202504-F1.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     categoria: "Obten recompensas",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt48c2097548e727ff/New_Insiders_Adv_Quicklink_Image.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt48c2097548e727ff/New_Insiders_Adv_Quicklink_Image.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt48c2097548e727ff/New_Insiders_Adv_Quicklink_Image.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt48c2097548e727ff/New_Insiders_Adv_Quicklink_Image.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
 ]
 
 const categoriaTemas = [
   {
     tema: "classic",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt3132f89e8405fa79/Updated-Home-AdvQuicklink-202504-Icons-2.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt3132f89e8405fa79/Updated-Home-AdvQuicklink-202504-Icons-2.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt3132f89e8405fa79/Updated-Home-AdvQuicklink-202504-Icons-2.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt3132f89e8405fa79/Updated-Home-AdvQuicklink-202504-Icons-2.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     tema: "disney",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt97e462404204836b/Updated-Home-AdvQuicklink-202504-Disney.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt97e462404204836b/Updated-Home-AdvQuicklink-202504-Disney.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt97e462404204836b/Updated-Home-AdvQuicklink-202504-Disney.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt97e462404204836b/Updated-Home-AdvQuicklink-202504-Disney.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     tema: "harry potter",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blte364aba8e7dec03f/Updated-Home-AdvQuicklink-202504-HarryPotter.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blte364aba8e7dec03f/Updated-Home-AdvQuicklink-202504-HarryPotter.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blte364aba8e7dec03f/Updated-Home-AdvQuicklink-202504-HarryPotter.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blte364aba8e7dec03f/Updated-Home-AdvQuicklink-202504-HarryPotter.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     tema: "marvel",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltd4b89a51da2a393f/Updated-Home-AdvQuicklink-202504-LEGOArt.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/bltd4b89a51da2a393f/Updated-Home-AdvQuicklink-202504-LEGOArt.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/bltd4b89a51da2a393f/Updated-Home-AdvQuicklink-202504-LEGOArt.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/bltd4b89a51da2a393f/Updated-Home-AdvQuicklink-202504-LEGOArt.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     tema: "botanical",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt4094023c3bca89d9/Updated-Home-AdvQuicklink-202504-Botanicals.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt4094023c3bca89d9/Updated-Home-AdvQuicklink-202504-Botanicals.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt4094023c3bca89d9/Updated-Home-AdvQuicklink-202504-Botanicals.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt4094023c3bca89d9/Updated-Home-AdvQuicklink-202504-Botanicals.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     tema: "artículos",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     tema: "creator",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt63676e129c6002f3/Updated-Home-AdvQuicklink-202504-Technic.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     tema: "star wars",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltf8aa7609d7218f78/Updated-Home-AdvQuicklink-202504-StarWars.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/bltf8aa7609d7218f78/Updated-Home-AdvQuicklink-202504-StarWars.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/bltf8aa7609d7218f78/Updated-Home-AdvQuicklink-202504-StarWars.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/bltf8aa7609d7218f78/Updated-Home-AdvQuicklink-202504-StarWars.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
 ]
 
 const categoriaEdades = [
   {
     edad: "más de 18 años",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt48ca15fe2908bb04/Updated-Home-AdvQuicklink-202504-18-2.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt48ca15fe2908bb04/Updated-Home-AdvQuicklink-202504-18-2.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt48ca15fe2908bb04/Updated-Home-AdvQuicklink-202504-18-2.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt48ca15fe2908bb04/Updated-Home-AdvQuicklink-202504-18-2.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     edad: "más de 13 años",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt29af5785f309f818/Updated-Home-AdvQuicklink-202504-13.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt29af5785f309f818/Updated-Home-AdvQuicklink-202504-13.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt29af5785f309f818/Updated-Home-AdvQuicklink-202504-13.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt29af5785f309f818/Updated-Home-AdvQuicklink-202504-13.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     edad: "más de 9 años",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt618d1eea72688276/Updated-Home-AdvQuicklink-202504-9.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt618d1eea72688276/Updated-Home-AdvQuicklink-202504-9.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt618d1eea72688276/Updated-Home-AdvQuicklink-202504-9.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt618d1eea72688276/Updated-Home-AdvQuicklink-202504-9.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     edad: "más de 6 años",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt46e0daafc2700bc7/Updated-Home-AdvQuicklink-202504-6.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt46e0daafc2700bc7/Updated-Home-AdvQuicklink-202504-6.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt46e0daafc2700bc7/Updated-Home-AdvQuicklink-202504-6.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt46e0daafc2700bc7/Updated-Home-AdvQuicklink-202504-6.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     edad: "más de 4 años",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt4bc2cc1b950563a1/Updated-Home-AdvQuicklink-202504-4.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt4bc2cc1b950563a1/Updated-Home-AdvQuicklink-202504-4.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt4bc2cc1b950563a1/Updated-Home-AdvQuicklink-202504-4.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt4bc2cc1b950563a1/Updated-Home-AdvQuicklink-202504-4.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
   {
     edad: "1,5 años",
-    imgUrl: "/images/"
+    imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltfdd98a31b0e6257e/Updated-Home-AdvQuicklink-202504-1.5.jpg?format=webply&fit=crop&quality=75&width=202&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/bltfdd98a31b0e6257e/Updated-Home-AdvQuicklink-202504-1.5.jpg?format=webply&fit=crop&quality=60&width=202&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/bltfdd98a31b0e6257e/Updated-Home-AdvQuicklink-202504-1.5.jpg?format=webply&fit=crop&quality=55&width=202&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/bltfdd98a31b0e6257e/Updated-Home-AdvQuicklink-202504-1.5.jpg?format=webply&fit=crop&quality=70&width=202&dpr=1.5 1.5x"
   },
 ]
 
 const productosDestacados =
   [
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt62a0047ef561f2db/77242_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Coche Ferrari SF-24 F1",
       price: "$5,499.00",
       age: "18+",
       pieces: "1361",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt9b9bd9113f7f11d9/72037_Prod_en-gb.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "Mario Kart™: Mario y Kart estándar",
       price: "$4,199.00",
       age: "18+",
       pieces: "1972",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt72d352ea938eb694/43263_Prod_en-gb.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "Castillo de Bella y Bestia",
       price: "$6,899.00",
       age: "18+",
       pieces: "2916",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt3e93aaf180737b50/10347_WEB_SEC01_NOBG.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "Ramillete Rayos de Sol",
       price: "$749.00",
       age: "9+",
       pieces: "373",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltc976e2c6d3cedd87/21356_Prod_en-gb.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "Barco de Vapor Fluvial",
       price: "$7,999.00",
       age: "18+",
       pieces: "4090",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltd183027c82558d22/10354_Prod.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "El Señor de los Anillos: La Comarca",
       price: "$6,699.00",
       age: "18+",
@@ -160,35 +160,35 @@ const productosDestacados =
 const productosRecomendados =
   [
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltd183027c82558d22/10354_Prod.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "El Señor de los Anillos: La Comarca",
       price: "$6,699.00",
       age: "18+",
       pieces: "2017",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt62a0047ef561f2db/77242_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Coche Ferrari SF-24 F1",
       price: "$5,499.00",
       age: "18+",
       pieces: "1361",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltc976e2c6d3cedd87/21356_Prod_en-gb.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "Barco de Vapor Fluvial",
       price: "$7,999.00",
       age: "18+",
       pieces: "4090",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt9ae67d7d9f7f24cc/75407_Prod_en-gb.png?fit=crop&quality=80&width=250&height=250&dpr=1",
       name: "Logotipo de Star Wars™ para Construir",
       price: "$1,499.00",
       age: "18+",
       pieces: "700",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt6af7a832be10c4d9/40817_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Maleta Amarilla",
       price: "$359.00",
       age: "7+",
@@ -198,35 +198,35 @@ const productosRecomendados =
 const productosCochesDeF1 =
   [
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt62a0047ef561f2db/77242_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Coche Ferrari SF-24 F1",
       price: "$5,499.00",
       age: "18+",
       pieces: "1361",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltad441c9411550c97/77251_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Coche de Carreras McLaren F1® Team MCL38",
       price: "$679.00",
       age: "10+",
       pieces: "269",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/bltca542b859ace5383/42206_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Coche Oracle Red Bull Racing RB20 F1",
       price: "$5,499.00",
       age: "18+",
       pieces: "1639",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt8dac22afe99a2c70/77243_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Coche de Carreras Oracle Red Bull Racing RB20 F1®",
       price: "$679.00",
       age: "18+",
       pieces: "251",
     },
     {
-      imgUrl: "/images/",
+      imgUrl: "https://www.lego.com/cdn/cs/set/assets/blt62a0047ef561f2db/77242_Prod_en-gb.png?fit=crop&quality=80&width=400&height=400&dpr=1",
       name: "Coche de Carreras Ferrari SF-24 F1®",
       price: "$679.00",
       age: "10+",
@@ -594,7 +594,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="relative">
                 <Image
-                  src="/placeholder.svg?height=600&width=400"
+                  src="https://www.lego.com/cdn/cs/set/assets/blt02b4e8dc6b4c0a1a/43222_Square.png?format=webply&fit=crop&quality=75&width=750&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt02b4e8dc6b4c0a1a/43222_Square.png?format=webply&fit=crop&quality=60&width=750&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt02b4e8dc6b4c0a1a/43222_Square.png?format=webply&fit=crop&quality=55&width=750&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt02b4e8dc6b4c0a1a/43222_Square.png?format=webply&fit=crop&quality=70&width=750&dpr=1.5 1.5x"
                   alt="LEGO Model"
                   width={600}
                   height={800}
@@ -607,7 +607,7 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="relative">
                   <Image
-                    src="/placeholder.svg?height=300&width=400"
+                    src="https://www.lego.com/cdn/cs/set/assets/blt55fdcf689fb006c5/21353_Square.png?format=webply&fit=crop&quality=75&width=750&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt55fdcf689fb006c5/21353_Square.png?format=webply&fit=crop&quality=60&width=750&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt55fdcf689fb006c5/21353_Square.png?format=webply&fit=crop&quality=55&width=750&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt55fdcf689fb006c5/21353_Square.png?format=webply&fit=crop&quality=70&width=750&dpr=1.5 1.5x"
                     alt="LEGO Galaxy"
                     width={400}
                     height={300}
@@ -619,7 +619,7 @@ export default function Home() {
                 </div>
                 <div className="relative">
                   <Image
-                    src="/placeholder.svg?height=300&width=400"
+                    src="https://www.lego.com/cdn/cs/set/assets/blt825ac3529f817000/76968_Square.png?format=webply&fit=crop&quality=75&width=750&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt825ac3529f817000/76968_Square.png?format=webply&fit=crop&quality=60&width=750&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt825ac3529f817000/76968_Square.png?format=webply&fit=crop&quality=55&width=750&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt825ac3529f817000/76968_Square.png?format=webply&fit=crop&quality=70&width=750&dpr=1.5 1.5x"
                     alt="LEGO Cat"
                     width={400}
                     height={300}
@@ -631,7 +631,7 @@ export default function Home() {
                 </div>
                 <div className="relative">
                   <Image
-                    src="/placeholder.svg?height=300&width=400"
+                    src="https://www.lego.com/cdn/cs/set/assets/blt860a53a8542a69c8/42207_Square.png?format=webply&fit=crop&quality=75&width=750&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt860a53a8542a69c8/42207_Square.png?format=webply&fit=crop&quality=60&width=750&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt860a53a8542a69c8/42207_Square.png?format=webply&fit=crop&quality=55&width=750&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt860a53a8542a69c8/42207_Square.png?format=webply&fit=crop&quality=70&width=750&dpr=1.5 1.5x"
                     alt="LEGO F1"
                     width={400}
                     height={300}
@@ -643,7 +643,7 @@ export default function Home() {
                 </div>
                 <div className="relative">
                   <Image
-                    src="/placeholder.svg?height=300&width=400"
+                    src="https://www.lego.com/cdn/cs/set/assets/blt4f02a5398938b84c/10342_Square.png?format=webply&fit=crop&quality=75&width=750&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt4f02a5398938b84c/10342_Square.png?format=webply&fit=crop&quality=60&width=750&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt4f02a5398938b84c/10342_Square.png?format=webply&fit=crop&quality=55&width=750&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt4f02a5398938b84c/10342_Square.png?format=webply&fit=crop&quality=70&width=750&dpr=1.5 1.5x"
                     alt="LEGO Flowers"
                     width={400}
                     height={300}
@@ -721,7 +721,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  src="https://www.lego.com/cdn/cs/set/assets/blt3e8dc492e10988fa/Giftgiving-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=75&width=375&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt3e8dc492e10988fa/Giftgiving-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=60&width=375&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt3e8dc492e10988fa/Giftgiving-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=55&width=375&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt3e8dc492e10988fa/Giftgiving-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=70&width=375&dpr=1.5 1.5x"
                   alt="Regalo LEGO"
                   width={400}
                   height={300}
@@ -741,7 +741,7 @@ export default function Home() {
 
               <div className="flex flex-col">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  src="https://www.lego.com/cdn/cs/set/assets/blt42e0983c1dcc30aa/Articles-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=75&width=375&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt42e0983c1dcc30aa/Articles-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=60&width=375&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt42e0983c1dcc30aa/Articles-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=55&width=375&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt42e0983c1dcc30aa/Articles-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=70&width=375&dpr=1.5 1.5x"
                   alt="Artículos LEGO"
                   width={400}
                   height={300}
@@ -761,7 +761,7 @@ export default function Home() {
 
               <div className="flex flex-col">
                 <Image
-                  src="/placeholder.svg?height=300&width=400"
+                  src="https://www.lego.com/cdn/cs/set/assets/blt016626986d473f36/LEGOBuilder-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=75&width=375&dpr=1 1x, https://www.lego.com/cdn/cs/set/assets/blt016626986d473f36/LEGOBuilder-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=60&width=375&dpr=2 2x, https://www.lego.com/cdn/cs/set/assets/blt016626986d473f36/LEGOBuilder-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=55&width=375&dpr=3 3x, https://www.lego.com/cdn/cs/set/assets/blt016626986d473f36/LEGOBuilder-202504-Home-Content-Block-Standard.jpg?format=webply&fit=crop&quality=70&width=375&dpr=1.5 1.5x"
                   alt="App LEGO Builder"
                   width={400}
                   height={300}
